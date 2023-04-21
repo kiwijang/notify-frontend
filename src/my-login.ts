@@ -1,16 +1,21 @@
-import { s as l, x as c, i as p, a as d } from "./index-06b6baab.js";
-import { v as h, l as f } from "./vite-d1e6f353.js";
-var g = Object.defineProperty, m = Object.getOwnPropertyDescriptor, b = (o, t, a, r) => {
-  for (var e = r > 1 ? void 0 : r ? m(t, a) : t, i = o.length - 1, n; i >= 0; i--)
-    (n = o[i]) && (e = (r ? n(t, a, e) : n(e)) || e);
-  return r && e && g(t, a, e), e;
-};
-let s = class extends l {
+import { LitElement, css, html } from 'lit';
+import { customElement } from 'lit/decorators.js';
+import litLogo from './assets/lit.svg';
+import viteLogo from './assets/vite.svg';
+
+/**
+ * An example element.
+ *
+ * @slot - This element has a slot
+ * @csspart button - The button
+ */
+@customElement('my-login')
+export class MyLogin extends LitElement {
   // <button id="logout-btn" @click=${this._LineLogout} part="button">
   //   登出
   // </button>
   render() {
-    return c`
+    return html`
       <div class="login-wrap">
         <h1>登入</h1>
 
@@ -31,24 +36,69 @@ let s = class extends l {
           <p class="read-the-docs">使用 Vite 和 Lit 製作前端</p>
 
           <a href="https://vitejs.dev" target="_blank">
-            <img src=${h} class="logo" alt="Vite logo" />
+            <img src=${viteLogo} class="logo" alt="Vite logo" />
           </a>
           <a href="https://lit.dev" target="_blank">
-            <img src=${f} class="logo lit" alt="Lit logo" />
+            <img src=${litLogo} class="logo lit" alt="Lit logo" />
           </a>
         </div>
       </div>
     `;
   }
-  async _LineLogin() {
-    let o = new URL("https://access.line.me/oauth2/v2.1/authorize");
-    o.searchParams.append("response_type", "code"), o.searchParams.append("response_mode", "form_post"), o.searchParams.append("client_id", "1660895465"), o.searchParams.append("state", "peko123123"), o.searchParams.append("nonce", "abcd5678peko"), o.searchParams.append(
-      "redirect_uri",
-      "http://localhost:5000/api/Users/GetToken"
-    ), o.searchParams.append("scope", "profile openid"), window.open(o.href, "_self");
+
+  private async _LineLogin() {
+    // https://developers.line.biz/en/docs/line-login/integrate-line-login/#making-an-authorization-request
+    let url = new URL('https://access.line.me/oauth2/v2.1/authorize');
+
+    url.searchParams.append('response_type', 'code');
+    url.searchParams.append('response_mode', 'form_post');
+    url.searchParams.append('client_id', '1660895465');
+    url.searchParams.append('state', 'peko123123');
+    url.searchParams.append('nonce', 'abcd5678peko');
+    url.searchParams.append(
+      'redirect_uri',
+      'https://notify-api-prac.azurewebsites.net/api/Users/GetToken'
+    );
+    url.searchParams.append('scope', 'profile openid');
+
+    window.open(url.href, '_self');
   }
-};
-s.styles = p`
+
+  // message API 產生 key
+  // genKey() {
+  //   (async () => {
+  //     const pair = await crypto.subtle.generateKey(
+  //       {
+  //         name: 'RSASSA-PKCS1-v1_5',
+  //         modulusLength: 2048,
+  //         publicExponent: new Uint8Array([1, 0, 1]),
+  //         hash: 'SHA-256',
+  //       },
+  //       true,
+  //       ['sign', 'verify']
+  //     );
+
+  //     console.log('=== private key ===');
+  //     console.log(
+  //       JSON.stringify(
+  //         await crypto.subtle.exportKey('jwk', pair.privateKey),
+  //         null,
+  //         '  '
+  //       )
+  //     );
+
+  //     console.log('=== public key ===');
+  //     console.log(
+  //       JSON.stringify(
+  //         await crypto.subtle.exportKey('jwk', pair.publicKey),
+  //         null,
+  //         '  '
+  //       )
+  //     );
+  //   })();
+  // }
+
+  static styles = css`
     :host {
       max-width: 1280px;
       margin: 0 auto;
@@ -151,9 +201,10 @@ s.styles = p`
       }
     }
   `;
-s = b([
-  d("my-login")
-], s);
-export {
-  s as MyLogin
-};
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'my-login': MyLogin;
+  }
+}
