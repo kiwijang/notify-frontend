@@ -1,12 +1,49 @@
-import { R as d } from "./index-dbf95f2a.js";
-import { LitElement as p, html as h, css as f } from "lit";
-import { query as u, property as l, customElement as m } from "lit/decorators.js";
-var x = Object.defineProperty, g = Object.getOwnPropertyDescriptor, a = (t, e, s, r) => {
-  for (var o = r > 1 ? void 0 : r ? g(e, s) : e, n = t.length - 1, c; n >= 0; n--)
-    (c = t[n]) && (o = (r ? c(e, s, o) : c(o)) || o);
-  return r && o && x(e, s, o), o;
+import { s as u, R as d, x as h, i as f, e as l, a as m } from "./index-df9efada.js";
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+const g = ({ finisher: t, descriptor: e }) => (s, n) => {
+  var o;
+  if (n === void 0) {
+    const i = (o = s.originalKey) !== null && o !== void 0 ? o : s.key, r = e != null ? { kind: "method", placement: "prototype", key: i, descriptor: e(s.key) } : { ...s, key: i };
+    return t != null && (r.finisher = function(p) {
+      t(p, i);
+    }), r;
+  }
+  {
+    const i = s.constructor;
+    e !== void 0 && Object.defineProperty(s, n, e(n)), t == null || t(i, n);
+  }
 };
-let i = class extends p {
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+function x(t, e) {
+  return g({ descriptor: (s) => {
+    const n = { get() {
+      var o, i;
+      return (i = (o = this.renderRoot) === null || o === void 0 ? void 0 : o.querySelector(t)) !== null && i !== void 0 ? i : null;
+    }, enumerable: !0, configurable: !0 };
+    if (e) {
+      const o = typeof s == "symbol" ? Symbol() : "__" + s;
+      n.get = function() {
+        var i, r;
+        return this[o] === void 0 && (this[o] = (r = (i = this.renderRoot) === null || i === void 0 ? void 0 : i.querySelector(t)) !== null && r !== void 0 ? r : null), this[o];
+      };
+    }
+    return n;
+  } });
+}
+var b = Object.defineProperty, y = Object.getOwnPropertyDescriptor, c = (t, e, s, n) => {
+  for (var o = n > 1 ? void 0 : n ? y(e, s) : e, i = t.length - 1, r; i >= 0; i--)
+    (r = t[i]) && (o = (n ? r(e, s, o) : r(o)) || o);
+  return n && o && b(e, s, o), o;
+};
+let a = class extends u {
   constructor() {
     super(), this._listItems = [], this.isNotifyAccessTokenValid = !1, this.isLoginAccessTokenValid = !1, fetch("http://localhost:5000/api/Users/VerifyLogin", {
       method: "GET",
@@ -111,7 +148,7 @@ let i = class extends p {
     }) && (this.textarea.value = "", await this._updHist(), window.alert("發送成功!"));
   }
 };
-i.styles = f`
+a.styles = f`
     :host {
       max-width: 1280px;
       margin: 0 auto;
@@ -244,21 +281,21 @@ i.styles = f`
       }
     }
   `;
-a([
-  u("#textarea")
-], i.prototype, "textarea", 2);
-a([
+c([
+  x("#textarea")
+], a.prototype, "textarea", 2);
+c([
   l()
-], i.prototype, "_listItems", 2);
-a([
+], a.prototype, "_listItems", 2);
+c([
   l()
-], i.prototype, "isNotifyAccessTokenValid", 2);
-a([
+], a.prototype, "isNotifyAccessTokenValid", 2);
+c([
   l()
-], i.prototype, "isLoginAccessTokenValid", 2);
-i = a([
+], a.prototype, "isLoginAccessTokenValid", 2);
+a = c([
   m("my-home")
-], i);
+], a);
 export {
-  i as MyHome
+  a as MyHome
 };

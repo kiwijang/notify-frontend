@@ -1,10 +1,8 @@
-import { LitElement as h, html as p, css as f } from "lit";
-import { property as d, customElement as u } from "lit/decorators.js";
-import { v as m, l as g } from "./vite-770ae09d.js";
-import { R as c } from "./index-dbf95f2a.js";
+import { s as h, R as c, x as p, i as f, e as d, a as u } from "./index-df9efada.js";
+import { v as g, l as m } from "./vite-d1e6f353.js";
 var b = Object.defineProperty, y = Object.getOwnPropertyDescriptor, l = (t, e, i, s) => {
-  for (var o = s > 1 ? void 0 : s ? y(e, i) : e, r = t.length - 1, n; r >= 0; r--)
-    (n = t[r]) && (o = (s ? n(e, i, o) : n(o)) || o);
+  for (var o = s > 1 ? void 0 : s ? y(e, i) : e, n = t.length - 1, r; n >= 0; n--)
+    (r = t[n]) && (o = (s ? r(e, i, o) : r(o)) || o);
   return s && o && b(e, i, o), o;
 };
 let a = class extends h {
@@ -63,10 +61,10 @@ let a = class extends h {
           <p class="read-the-docs">${this.docsHint}</p>
 
           <a href="https://vitejs.dev" target="_blank">
-            <img src=${m} class="logo" alt="Vite logo" />
+            <img src=${g} class="logo" alt="Vite logo" />
           </a>
           <a href="https://lit.dev" target="_blank">
-            <img src=${g} class="logo lit" alt="Lit logo" />
+            <img src=${m} class="logo lit" alt="Lit logo" />
           </a>
         </div>
       </div>
