@@ -1896,16 +1896,16 @@ let ye = class extends ee {
       mode: "cors",
       cache: "no-cache",
       credentials: "include"
-    }), this.isLogin = !1, window.alert("登出成功!"), S.go("/login");
+    }), this.isLogin = !1, window.alert("登出成功!"), S.go("./login");
   }
   _goHome(r) {
-    r.preventDefault(), S.go("/");
+    r.preventDefault(), S.go("./");
   }
   _goNotify(r) {
-    r.preventDefault(), S.go("/notify");
+    r.preventDefault(), S.go("./notify");
   }
   _goLogin(r) {
-    r.preventDefault(), S.go("/login");
+    r.preventDefault(), S.go("./login");
   }
 };
 ye.styles = mr`
@@ -2292,7 +2292,7 @@ function kr() {
   var r = new S(document.querySelector("#app"));
   r.setRoutes([
     {
-      path: "/",
+      path: "./",
       component: "my-home",
       action: function() {
         var e = Ne(/* @__PURE__ */ H().mark(function n() {
@@ -2300,7 +2300,7 @@ function kr() {
             for (; ; )
               switch (i.prev = i.next) {
                 case 0:
-                  return i.next = 2, import("./my-home-cb280be4.js");
+                  return i.next = 2, import("./my-home-b1867903.js");
                 case 2:
                   return i.abrupt("return", i.sent);
                 case 3:
@@ -2316,7 +2316,7 @@ function kr() {
       }()
     },
     {
-      path: "/login",
+      path: "./login",
       component: "my-login",
       action: function() {
         var e = Ne(/* @__PURE__ */ H().mark(function n() {
@@ -2324,7 +2324,7 @@ function kr() {
             for (; ; )
               switch (i.prev = i.next) {
                 case 0:
-                  return i.next = 2, import("./my-login-fc4e5a25.js");
+                  return i.next = 2, import("./my-login-becff878.js");
                 case 2:
                   return i.abrupt("return", i.sent);
                 case 3:
@@ -2340,7 +2340,7 @@ function kr() {
       }()
     },
     {
-      path: "/notify",
+      path: "./notify",
       component: "my-notify",
       action: function() {
         var e = Ne(/* @__PURE__ */ H().mark(function n() {
@@ -2348,7 +2348,7 @@ function kr() {
             for (; ; )
               switch (i.prev = i.next) {
                 case 0:
-                  return i.next = 2, import("./my-notify-fc7c0027.js");
+                  return i.next = 2, import("./my-notify-d6099e45.js");
                 case 2:
                   return i.abrupt("return", i.sent);
                 case 3:
@@ -2365,7 +2365,7 @@ function kr() {
     },
     {
       path: "(.*)",
-      redirect: "/"
+      redirect: "./"
     }
     // 萬用路由
   ]);

@@ -1,4 +1,4 @@
-import { s as h, R as c, x as p, i as f, e as d, a as u } from "./index-df9efada.js";
+import { s as h, R as c, x as p, i as f, e as d, a as u } from "./index-06b6baab.js";
 import { v as g, l as m } from "./vite-d1e6f353.js";
 var b = Object.defineProperty, y = Object.getOwnPropertyDescriptor, l = (t, e, i, s) => {
   for (var o = s > 1 ? void 0 : s ? y(e, i) : e, n = t.length - 1, r; n >= 0; n--)
@@ -23,7 +23,7 @@ let a = class extends h {
         bubbles: !0,
         composed: !0
       };
-      this.dispatchEvent(new CustomEvent("isLogin", e)), c.go("/login");
+      this.dispatchEvent(new CustomEvent("isLogin", e)), c.go("./login");
     });
   }
   connectedCallback() {
@@ -39,7 +39,7 @@ let a = class extends h {
       },
       body: `code=${e}&state=${i}`
     }).then((s) => {
-      s.status === 200 && c.go("/");
+      s.status === 200 && c.go("./");
     });
   }
   render() {
@@ -87,7 +87,7 @@ let a = class extends h {
           bubbles: !0,
           composed: !0
         };
-        this.dispatchEvent(new CustomEvent("isLogin", e)), c.go("/login");
+        this.dispatchEvent(new CustomEvent("isLogin", e)), c.go("./login");
         return;
       }
       this._getCode();

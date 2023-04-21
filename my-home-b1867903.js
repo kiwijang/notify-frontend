@@ -1,4 +1,4 @@
-import { s as u, R as d, x as h, i as f, e as l, a as m } from "./index-df9efada.js";
+import { s as u, R as d, x as h, i as f, e as l, a as m } from "./index-06b6baab.js";
 /**
  * @license
  * Copyright 2017 Google LLC
@@ -61,7 +61,7 @@ let a = class extends u {
         bubbles: !0,
         composed: !0
       };
-      this.dispatchEvent(new CustomEvent("isLogin", e)), d.go("/login");
+      this.dispatchEvent(new CustomEvent("isLogin", e)), d.go("./login");
     }), fetch("http://localhost:5000/api/Users/GetNotifyStatus", {
       method: "GET",
       mode: "cors",
@@ -72,7 +72,7 @@ let a = class extends u {
         this.isNotifyAccessTokenValid = !0;
         return;
       }
-      this.isNotifyAccessTokenValid = !1, d.go("/notify");
+      this.isNotifyAccessTokenValid = !1, d.go("./notify");
     });
   }
   connectedCallback() {
