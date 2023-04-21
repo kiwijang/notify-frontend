@@ -6,9 +6,9 @@ import { LitElement } from 'lit';
  * @csspart button - The button
  */
 export declare class MyLogin extends LitElement {
-    render(): any;
+    render(): import("lit-html").TemplateResult<1>;
     private _LineLogin;
-    static styles: any;
+    static styles: import("lit").CSSResult;
 }
 declare global {
     interface HTMLElementTagNameMap {

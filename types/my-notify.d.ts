@@ -13,11 +13,11 @@ export declare class MyNotify extends LitElement {
     isLoginAccessTokenValid: boolean;
     constructor();
     connectedCallback(): void;
-    render(): any;
+    render(): import("lit-html").TemplateResult<1> | undefined;
     private _GetNotifyCode;
     private _getCode;
     private _RevokeNotify;
-    static styles: any;
+    static styles: import("lit").CSSResult;
 }
 declare global {
     interface HTMLElementTagNameMap {

@@ -136,7 +136,7 @@ export class MyNotify extends LitElement {
     url.searchParams.append('client_id', 'DfXzLnaKcOdrCOWpa8FLbU');
     url.searchParams.append('state', '123123');
     url.searchParams.append('scope', 'notify');
-    url.searchParams.append('redirect_uri', 'https://notify-client.azurewebsites.net/notify');
+    url.searchParams.append('redirect_uri', 'https://thankful-plant-0f318751e.3.azurestaticapps.net/notify');
 
     window.open(url, '_self');
   }

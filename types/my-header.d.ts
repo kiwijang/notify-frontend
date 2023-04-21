@@ -9,12 +9,12 @@ export declare class MyHeader extends LitElement {
     isLogin: boolean;
     constructor();
     connectedCallback(): Promise<void>;
-    render(): any;
+    render(): import("lit-html").TemplateResult<1>;
     private _LineLogout;
     _goHome(e: Event): void;
     _goNotify(e: Event): void;
     _goLogin(e: Event): void;
-    static styles: any;
+    static styles: import("lit").CSSResult;
 }
 declare global {
     interface HTMLElementTagNameMap {

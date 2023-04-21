@@ -11,10 +11,10 @@ export declare class MyHome extends LitElement {
     constructor();
     connectedCallback(): void;
     _updHist(): Promise<void>;
-    render(): any;
+    render(): import("lit-html").TemplateResult<1> | undefined;
     private _onClick;
     private _notify;
-    static styles: any;
+    static styles: import("lit").CSSResult;
 }
 declare global {
     interface HTMLElementTagNameMap {
